@@ -1,24 +1,35 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./css/style.css";
+import { createNewTask } from "./modules/tasks";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const app = document.querySelector("#app");
 
-setupCounter(document.querySelector('#counter'))
+const newTask = createNewTask("my task", "this is my first task", new Date());
+const newTask1 = createNewTask(
+  "my task",
+  "this is my first task",
+  new Date(2025, 8, 29),
+  "LOW"
+);
+
+const newTask2 = createNewTask("my task", "this is my first task");
+const newTask3 = createNewTask("new task", "no desc", new Date(), "medium");
+const newTask4 = createNewTask("new task", "no desc", new Date(), "high");
+const newTask5 = createNewTask("new task", "no desc", new Date(), "high");
+const newTask6 = createNewTask("new task", "no desc", new Date(), "low");
+const newTask7 = createNewTask("new task", "no desc", new Date(), "medium");
+const newTask8 = createNewTask("new task", "no desc", new Date(), "high");
+const newTask9 = createNewTask("new task", "no desc", new Date(), "medium");
+
+const newArr = [];
+newArr.push(
+  newTask,
+  newTask1,
+  newTask2,
+  newTask3,
+  newTask4,
+  newTask5,
+  newTask6,
+  newTask7,
+  newTask9,
+  newTask8
+);
