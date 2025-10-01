@@ -15,7 +15,7 @@ export function createNewTask(
   };
 }
 
-//? TODO get Task by Id could live in state.js
+// helper function to get a task - takes an array and a taskID
 export function getTaskById(tasks, taskId) {
   if (!Array.isArray(tasks)) return null;
   return tasks.find((t) => t.id === taskId) || null;
@@ -68,8 +68,8 @@ export function sortTasksByPriority(tasksToSort, order = "asc") {
   });
 }
 
-export function deleteTask(tasks, taskId) {
-  if (!Array.isArray(tasks)) return [];
-  if (!taskId) return tasks;
-  return tasks.filter((task) => task.id !== taskId);
-}
+// export function deleteTask(tasks, taskId) {
+//   if (!Array.isArray(tasks)) return [];
+//   if (!taskId) return tasks;
+//   return tasks.filter((task) => task.id !== taskId);
+// }
